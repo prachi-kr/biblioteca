@@ -1,0 +1,14 @@
+server:
+    port: 8081
+
+spring:
+ datasource:
+  url: jdbc:h2:file:~/biblioteca
+  driverClassName: org.h2.Driver
+  username: prachi
+  password: prachi
+
+info:
+  name: Spring Sample Application
+  description: This is my first spring boot application
+  version: 2.0.0
