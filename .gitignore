@@ -25,3 +25,8 @@
 /dist/
 /nbdist/
 /.nb-gradle/
+
+.gradle/
+.idea/
+out/
+*.iml
