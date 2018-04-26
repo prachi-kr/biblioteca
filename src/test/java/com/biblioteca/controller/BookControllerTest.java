@@ -1,6 +1,5 @@
-package com.biblioteca.BookController;
+package com.biblioteca.controller;
 
-import com.biblioteca.controller.BookController;
 import com.biblioteca.service.BookService;
 import org.junit.Before;
 import org.junit.Test;
@@ -29,5 +28,19 @@ public class BookControllerTest {
         bookController.getAllBooks();
         verify(bookService, times(1)).getAllBooks();
     }
+
+//    @Test
+//    public void shouldBeAbleToCheckout() {
+//        bookController.checkoutBook("ba0bd157-e668-4d7e-a0a9-af5fb86222b7");
+//        verify(bookService, times(1)).checkoutBook(new Checkout("ba0bd157-e668-4d7e-a0a9-af5fb86222b7"));
+//    }
+
+
+
+
+//    @Test
+//    public void shouldReturnInvalidOption() {
+//        assertEquals(bookController.throwExp(),"Select a valid option!");
+//    }
 
 }

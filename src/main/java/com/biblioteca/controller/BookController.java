@@ -11,17 +11,17 @@ import java.util.List;
 @RestController
 public class BookController {
 
-    BookService bookService;
+    private BookService bookService;
 
     @Autowired
     public BookController(BookService bookService) {
         this.bookService = bookService;
     }
 
-
     @RequestMapping(value = "/books")
     public List<Book> getAllBooks() {
         return bookService.getAllBooks();
     }
+
 
 }

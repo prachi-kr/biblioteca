@@ -1,8 +1,7 @@
-package com.biblioteca.BookRepository;
+package com.biblioteca.repository;
 
 import com.biblioteca.Application;
 import com.biblioteca.model.Book;
-import com.biblioteca.repository.BookRepository;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,8 +22,9 @@ public class BookRepositoryTest {
     private BookRepository bookRepository;
 
     @Test
-    public void shouldReturnListOfBooks(){
-        List<Book> books= bookRepository.getAllBooks();
-        assertEquals(books.size(),4);
+    public void shouldReturnListOfBooks() {
+        List<Book> books = bookRepository.getAllBooks();
+        assertEquals(books.size(), 4);
     }
+
 }

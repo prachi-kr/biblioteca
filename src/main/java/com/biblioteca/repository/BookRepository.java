@@ -26,4 +26,13 @@ public class BookRepository {
                 .from(DSL.table("BOOK"))
                 .fetchInto(Book.class);
     }
+
+
+    public Book getBook(String BookId) {
+        return dsl.select(DSL.field("id"), DSL.field("title"), DSL.field("author"), DSL.field("publish_year"), DSL.field("isbn"))
+                .from(DSL.table("BOOK"))
+                .where(DSL.field("id").eq(BookId))
+                .fetchOne()
+                .into(Book.class);
+    }
 }

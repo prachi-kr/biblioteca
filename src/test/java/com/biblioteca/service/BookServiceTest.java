@@ -1,8 +1,7 @@
-package com.biblioteca.BookService;
+package com.biblioteca.service;
 
 
 import com.biblioteca.repository.BookRepository;
-import com.biblioteca.service.BookService;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -30,6 +29,8 @@ public class  BookServiceTest {
         bookService.getAllBooks();
         verify(bookRepository, times(1)).getAllBooks();
     }
+
+
 
 
 }

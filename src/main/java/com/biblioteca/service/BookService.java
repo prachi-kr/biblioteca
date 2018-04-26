@@ -10,7 +10,7 @@ import java.util.List;
 @Service
 public class BookService {
 
-    BookRepository bookRepository;
+    private BookRepository bookRepository;
 
     @Autowired
     public BookService(BookRepository bookRepository) {
@@ -20,5 +20,6 @@ public class BookService {
     public List<Book> getAllBooks() {
         return bookRepository.getAllBooks();
     }
+
 
 }
