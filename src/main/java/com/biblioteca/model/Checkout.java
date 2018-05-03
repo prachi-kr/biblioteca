@@ -4,34 +4,34 @@ import java.sql.Timestamp;
 
 public class Checkout {
 
-    private int id;
-    private String bookId;
+    private String id;
+    private String itemId;
     private Timestamp dateOfIssue;
     private Timestamp dateOfReturn;
 
 
-    public Checkout(Book book) {
-        this.bookId = book.getId();
+    public Checkout(Item item) {
+        this.itemId = item.getId();
     }
 
     public Checkout() {
 
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
-    public String getBookId() {
-        return bookId;
+    public String getItemId() {
+        return itemId;
     }
 
-    public void setBookId(String bookId) {
-        this.bookId = bookId;
+    public void setItemId(String itemId) {
+        this.itemId = itemId;
     }
 
     public Timestamp getDateOfIssue() {
@@ -54,7 +54,7 @@ public class Checkout {
     public String toString() {
         return "Checkout{" +
                 "id=" + id +
-                ", bookId='" + bookId + '\'' +
+                ", itemId='" + itemId + '\'' +
                 ", dateOfIssue=" + dateOfIssue +
                 ", dateOfReturn=" + dateOfReturn +
                 '}';

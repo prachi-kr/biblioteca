@@ -15,7 +15,7 @@ public class ExceptionController implements ErrorController {
     private static final Logger LOGGER = LoggerFactory.getLogger(ExceptionController.class);
 
     @RequestMapping(value = "/error")
-    public Errors handleError(HttpServletRequest httpServletRequest ) {
+    public Errors handleError(HttpServletRequest httpServletRequest) {
         LOGGER.error(httpServletRequest.getAttribute(RequestDispatcher.FORWARD_REQUEST_URI).toString());
         return Errors.endPointNotFound();
     }

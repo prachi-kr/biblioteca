@@ -1,0 +1,2 @@
+drop TABLE BOOK;
+drop TABLE CHECKOUT;

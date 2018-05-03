@@ -1,10 +1,13 @@
 package com.biblioteca.controller;
 
+import com.biblioteca.exception.ItemOutOfStockException;
+import com.biblioteca.exception.InvalidItemException;
+import com.biblioteca.exception.InvalidReturnException;
+import com.biblioteca.model.Checkout;
+import com.biblioteca.model.DateInput;
 import com.biblioteca.service.CheckoutService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class CheckoutController {
@@ -16,8 +19,14 @@ public class CheckoutController {
         this.checkoutService = checkoutService;
     }
 
-    @RequestMapping(value = "/books/{id}/checkout")
-    public void checkoutBook(@PathVariable("id") String id) {
-        checkoutService.checkoutBook(id);
+    @RequestMapping(value = "/items/{itemId}/checkout")
+    public Checkout checkoutBook(@PathVariable("itemId") String itemId) throws ItemOutOfStockException, InvalidItemException {
+        return checkoutService.checkoutItem(itemId);
     }
+
+    @RequestMapping(value = "/items/{itemId}/checkout/{checkoutId}/returnItem",method = RequestMethod.POST)
+    public Checkout returnCheckedoutItem(@PathVariable("itemId") String itemId, @PathVariable("checkoutId") String checkoutId, @RequestBody DateInput date) throws InvalidItemException, InvalidReturnException {
+        return checkoutService.returnCheckedoutItem(itemId,checkoutId,date.getDate());
+    }
+
 }

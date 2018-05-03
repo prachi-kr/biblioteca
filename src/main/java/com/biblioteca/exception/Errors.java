@@ -4,7 +4,7 @@ import java.util.*;
 
 public class Errors {
 
-   private List<ApplicationError> errors;
+    private List<ApplicationError> errors;
 
     public Errors() {
         this.errors = new ArrayList<>();
@@ -18,8 +18,21 @@ public class Errors {
 
         this.errors = errors;
     }
-    public static Errors endPointNotFound(){
+
+    public static Errors endPointNotFound() {
         return new Errors(Collections.singletonList(new ApplicationError(UUID.randomUUID().toString(), "404", "ENDPOINT_NOT_FOUND")));
+    }
+
+    public static Errors bookIDNotValid() {
+        return new Errors(Collections.singletonList(new ApplicationError(UUID.randomUUID().toString(), "404", "BOOK_NOT_VALID")));
+    }
+
+    public static Errors bookOutOfStock() {
+        return new Errors(Collections.singletonList(new ApplicationError(UUID.randomUUID().toString(), "422", "BOOK_OUT_OF_STOCK")));
+    }
+
+    public static Errors returnNotValid() {
+        return new Errors(Collections.singletonList(new ApplicationError(UUID.randomUUID().toString(), "404", "CHECKOUT_RETURN_NOT_VALID")));
     }
 
     @Override
